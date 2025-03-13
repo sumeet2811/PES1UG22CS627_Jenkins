@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'chmod +x main/hello_exec && ./main/hello_exec'
+                sh 'chmod +x main/hello_exec && ./main/hello_execc'
             }
         }
         stage('Deploy') {
