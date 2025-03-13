@@ -4,7 +4,7 @@ FROM jenkins/jenkins:lts
 USER root
 RUN apt-get update && apt-get install -y make && apt-get install -y g++ --fix-missing
 # drop back to the regular jenkins user - good practice
-USER jenkins
+USER  jenkins
 
 
 
