@@ -3,20 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-                    sh '''
-                    g++ main/hello.cpp -o main/hello_exec
-                    '''
-                }
+                sh 'g++ main/hello.cpp -o main/hello_exec'
             }
         }
         stage('Test') {
             steps {
-                script {
-                    sh '''
-                    ./main/hello_exec
-                    '''
-                }
+                sh 'chmod +x main/hello_exec && ./main/hello_exec'
             }
         }
         stage('Deploy') {
@@ -31,6 +23,6 @@ pipeline {
         }
         failure {
             echo 'Pipeline failed!'
-        }
-    }
+        }
+    }
 }
